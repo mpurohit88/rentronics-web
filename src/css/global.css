@@ -30,6 +30,7 @@
   }
 
   .category li .rm-category__box {
+    display: table-cell;
     box-shadow: 0 1px 2px 0 #bfcfdc;
     background: #fff;
     padding: 20px;
@@ -54,8 +55,8 @@
     .category {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: 25% 25% 25% 25%;
-        grid-template-columns: 25% 25% 25% 25%;
+        -ms-grid-columns: 33% 33% 33%;
+        grid-template-columns: 33% 33% 33%;
         grid-gap: 3px;
     }
   }
