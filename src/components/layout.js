@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
+
+import Tile from '../components/ui/tile';
+import Model from '../components/ui/modal';
 
 import heroImg from "../images/imgpsh_fullsize2.jpg";
 import logo from "../images/rentronics_logo2.png";
@@ -13,6 +16,8 @@ import arrivals from ".././images/categories/new-arrivals.svg";
 import offer from ".././images/categories/offer.svg";
 
 function Layout({ children }) {
+  const [showLoginPage, setShowLoginPage] = useState(false);
+
   return (
     <StaticQuery
       query={graphql`
@@ -70,11 +75,10 @@ function Layout({ children }) {
                     <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">link</a>
                   </li>
                 </ul>
-                <form action={data.site.siteMetadata.github}>
-                  <button type="submit" id="navAction"
-                    className="mx-auto lg:mx-0 hover:underline font-bold rounded-full mt-4 lg:mt-0 py-2 px-8 shadow opacity-75 gradient text-white">Login</button>
-                </form>
-
+                <button type="button" id="navAction" onClick={() => setShowLoginPage(true)}
+                  className="mx-auto lg:mx-0 hover:underline font-bold rounded-full mt-4 lg:mt-0 py-2 px-8 shadow opacity-75 gradient text-white">
+                  Login
+                </button>
               </div>
             </div>
 
@@ -126,25 +130,19 @@ function Layout({ children }) {
 
           <section className="bg-white border-b py-8">
             <div className="container max-w-5xl mx-auto m-8">
-              <ul className="category">
-                <li><a href="/bangalore/packages-on-rent" class="">
-                  <div class="rm-category__box"><img src={packages} /><h3>Packages</h3></div></a>
-                </li>
-                <li><a href="#" class="">
-                  <div class="rm-category__box"><img src={furniture} /><h3>Furniture</h3></div></a>
-                </li>
-                <li><a href="#" class="">
-                  <div class="rm-category__box"><img src={appliances} /><h3>Appliances</h3></div></a>
-                </li>
-                <li><a href="#" class="">
-                  <div class="rm-category__box"><img src={electronics} /><h3>Electronics</h3></div></a>
-                </li><li><a href="#" class="">
-                  <div class="rm-category__box"><img src={fitness} /><h3>Fitness</h3></div></a>
-                </li><li><a href="#" class="">
-                  <div class="rm-category__box"><img src={arrivals} /><h3>New Arrivals</h3></div></a>
-                </li><li><a href="#" class="">
-                  <div class="rm-category__box"><img src={offer} /><h3>Upto 50% Off</h3></div></a>
-                </li>
+              <ul className="flex category">
+
+                {
+                  [{ text: "Packages", src: packages },
+                  { text: "Furniture", src: furniture },
+                  { text: "Appliances", src: appliances },
+                  { text: "Electronics", src: electronics },
+                  { text: "Fitness", src: fitness },
+                  { text: "New Arrivals", src: arrivals },
+                  { text: "Upto 50% Off", src: offer }].map(category => {
+                    return <Tile text={category.text} iconSrc={category.src} />
+                  })
+                }
               </ul>
             </div>
           </section>
@@ -521,6 +519,7 @@ function Layout({ children }) {
 
           </footer>
 
+          {showLoginPage ? <Model /> : null}
         </body>
       )}
     />
