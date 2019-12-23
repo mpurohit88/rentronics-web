@@ -1,0 +1,163 @@
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    max-width: 100%;
+    height: 400px;
+    max-height: 100%;
+    z-index: 1010;
+    background-color: white;
+    color: black;
+    display: flex; 
+  }
+
+  .modal-guts {
+
+    /* other stuff we already covered */
+  
+    /* cover the modal */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    /* spacing as needed */
+    padding: 20px 50px 20px 20px;
+  
+    /* let it scroll */
+    overflow: auto;
+
+  }
+
+  .modal-overlay {
+
+    /* recommendation:
+       don't focus on the number "1000" here, but rather,
+       you should have a documented system for z-index and 
+       follow that system. This number should be pretty
+       high on the scale in that system.
+    */
+    z-index: 1000;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    opacity: .5;
+  }
+
+
+  .remodal-wrapper {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 10px 0;
+  }
+
+  .remodal-overlay, .remodal-wrapper {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .remodal-wrapper {
+    text-align: center;
+  }
+
+  .remodal {
+    position: relative;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 35px;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    color: #2b2e38;
+    background: #fff;
+  }
+
+  .remodal-is-initialized {
+    display: inline-block;
+  }
+
+  @media only screen and (min-width: 641px) {
+    .remodal {
+      max-width: 700px;
+    }
+  }
+
+  .rm-login__main-close {
+    background: transparent!important;
+    box-shadow: 0 0 0;
+    line-height: 10px;
+    min-width: 0;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    z-index: 1000;
+  }
+
+ .rm-login__main-close img {
+    width: 30px;
+  }
+
+  .rm-login__signup-main h2 a.active:after, .rm-login__signup-main h2 button.active:after {
+    animation-duration: .2s;
+    animation-fill-mode: both;
+    background: #db3327;
+    border-radius: 5px;
+    bottom: -12px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 2em;
+  }
+
+  .rm-login__signup-main h2 button {
+    color: #bababa;
+    font-size: 24px;
+    margin-right: 25px;
+    position: relative;
+    transition: all .2s linear;
+    color: #313131;
+  }
+
+  .rm-login__signup-main h2 {
+    color: #656565;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 40px 0 30px;
+    text-align: initial;
+  }
+
+  .rm-login__signup-main h2 button.active.slideLeft:after {
+    animation-name: slideLeft;
+  }
+
+  .rm-login__signup-main h2 button.active:after {
+    animation-duration: .2s;
+    animation-fill-mode: both;
+    background: #db3327;
+    border-radius: 5px;
+    bottom: -12px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 2em;
+  }
