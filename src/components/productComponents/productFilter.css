@@ -1,0 +1,9 @@
+.cat-grey-box{
+    backface-visibility: hidden;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    padding: 20px;  
+    transition: all .2s linear;
+    max-width: 275px;
+    color: #787878
+}

@@ -60,7 +60,7 @@ function Layout({ children }) {
                     <a className="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Home</a>
                   </li>
                   <li className="mr-3">
-                    <a className="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Shop</a>
+                    <a className="inline-block py-2 px-4 text-black font-bold no-underline" href="/product">Shop</a>
                   </li>
                   <li className="mr-3">
                     <a className="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Blog</a>
