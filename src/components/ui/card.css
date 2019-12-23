@@ -1,0 +1,15 @@
+.card {
+  cursor: pointer;
+  transition: all .2s linear;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
+}
+
+.card:hover {
+  box-shadow: 0 9px 7px 0 rgba(0,0,0,.1);
+  transition: box-shadow .2s linear;
+  border-bottom: 0;
+}

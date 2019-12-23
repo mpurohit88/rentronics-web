@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Button from './button';
+import Heading from './heading';
+import close from "../../images/close.png";
 
-export default function Modal() {
+import './modal.css';
+
+export default function Modal({ setShowLoginPage }) {
+  const [isLogin, setIsLogin] = useState(true);
+
   return (
-    <div className="fixed pin z-50 overflow-auto bg-smoke-light flex">
-      <div class="h-screen w-full flex flex-col items-center justify-center bg-teal-lightest font-sans">
-        <div class="h-screen w-full absolute flex items-center justify-center bg-modal">
-          <div class="bg-white rounded shadow p-8 m-4 max-w-xs max-h-full text-center overflow-y-scroll">
-            <div class="mb-4">
-              <h1>Welcome!</h1>
-            </div>
-            <div class="mb-8">
-              <p>Ready to get started? Keep scrolling to see some great components.</p>
-            </div>
-            <div class="flex justify-center">
-              <button class="flex-no-shrink text-white py-2 px-4 rounded bg-teal hover:bg-teal-dark">Let's Go</button>
-            </div>
+    <>
+      <div className="rm-login__signup-main remodal-wrapper">
+        <div className="remodal remodal-is-initialized" id="modal">
+          <a className="rm-login__main-close" onClick={() => setShowLoginPage(false)}><img src={close} /></a>
+          {/* <Heading text="Modal Example" /> */}
+          <h2>
+            <button className={`${isLogin ? '' : 'active slideLeft'}`} onClick={() => setIsLogin(false)}>Sign Up</button>
+            <button className={`${isLogin ? 'active slideLeft' : ''}`} onClick={() => setIsLogin(true)}>Log in</button>
+          </h2>
+          <div>
+            <Button text="Close" onClickFn={() => setShowLoginPage(false)} />
           </div>
         </div>
       </div>
-    </div>
+      <div className="modal-overlay" id="modal-overlay">
+      </div>
+    </>
   )
 }

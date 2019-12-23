@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import catAndHumanIllustration from "../../images/hero.png";
-import { Divider, GridList, Grid} from '@material-ui/core'
+import { Divider, GridList, Grid } from '@material-ui/core'
+
+import './card.css';
 
 function ProductCard() {
     const [productList, setProductList] = useState([
@@ -12,7 +14,7 @@ function ProductCard() {
 
     const productArray = productList.map(e => {
         return (
-            <div class="max-w-sm rounded overflow-hidden shadow-lg sm:w-1/4 ml-10 mt-4 mb-8">
+            <div class="card max-w-sm rounded overflow-hidden sm:w-1/4 ml-10 mt-4 mb-8">
                 <img class="w-full" src={e.imageSrc} alt="Sunset in the mountains" ></img>
                 <div class="text-gray-800 text-xl ml-2 mb-2">{e.name}</div>
                 <div className="m-2">
