@@ -21,7 +21,7 @@ export default function productFilter() {
     return (
         <Grid>
             <Grid container className="cat-grey-box mt-3 ml-10">
-                <div class=" text-uppercase">
+                <div class="text-uppercase">
                     Choose Rental Tenure
                </div>
                 <Slider

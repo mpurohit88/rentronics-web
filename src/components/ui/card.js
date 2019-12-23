@@ -8,7 +8,6 @@ function ProductCard() {
         { id: 2, name: "Whirlpool Fridge", imageSrc: catAndHumanIllustration, price: "2500.99" },
         { id: 3, name: "Whirlpool T.V", imageSrc: catAndHumanIllustration, price: "3500.99" },
         { id: 4, name: "Whirlpool T.V", imageSrc: catAndHumanIllustration, price: "3500.99" },
-
     ])
 
     const productArray = productList.map(e => {
