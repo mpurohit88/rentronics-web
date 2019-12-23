@@ -6,7 +6,7 @@ import logo from "../images/rentronics_logo2.png";
 
 import Button from '../components/ui/button';
 
-function Header({ siteTitle }) {
+function Header({ siteTitle, setShowLoginPage }) {
   const [isExpanded, toggleExpansion] = useState(false);
 
   return (

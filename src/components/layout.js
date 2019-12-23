@@ -12,13 +12,13 @@ function Layout({ children }) {
   return (
     <body>
       {/* Navigation */}
-      <Header siteTitle="site Title" />
+      <Header siteTitle="site Title" setShowLoginPage={setShowLoginPage} />
 
       {children}
 
       {/* Footer */}
       <Footer />
-      {showLoginPage ? <Model onClose={setShowLoginPage} /> : null}
+      {showLoginPage ? <Model setShowLoginPage={setShowLoginPage} /> : null}
 
     </body>
   );
